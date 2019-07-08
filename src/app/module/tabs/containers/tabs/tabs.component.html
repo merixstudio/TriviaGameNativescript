@@ -1,0 +1,21 @@
+<TabView
+  androidTabsPosition="bottom"
+  tabBackgroundColor="#353553"
+  tabTextColor="#ffffff"
+  selectedTabTextColor="#f63f4d"
+>
+  <page-router-outlet
+    *tabItem="{title: 'CATEGORIES'}"
+    name="categoriesTab">
+  </page-router-outlet>
+
+  <page-router-outlet
+    *tabItem="{title: 'HIGHSCORES'}"
+    name="highscoresTab">
+  </page-router-outlet>
+
+  <page-router-outlet
+    *tabItem="{title: 'SETTINGS'}"
+    name="settingsTab">
+  </page-router-outlet>
+</TabView>

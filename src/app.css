@@ -1,0 +1,16 @@
+@import '~nativescript-theme-core/css/core.light.ios.css';
+
+.far {
+  font-family: 'Font Awesome 5 Free', 'FontAwesome';
+}
+
+.action-bar {
+  background-color: #353553;
+  color: white;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  background-color: #333364;
+}

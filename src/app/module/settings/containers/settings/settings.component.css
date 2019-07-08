@@ -1,0 +1,41 @@
+.options-category {
+  margin: 20 0 40 0;
+  padding: 0 20;
+}
+
+.title {
+  margin: 20 0;
+  font-size: 20;
+  font-weight: bold;
+  color: #f63f4d;
+}
+
+Switch {
+  background-color: #f63f4d;
+}
+
+.textfield-container {
+  flex-direction: row;
+  align-items: center;
+}
+
+.section {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20 0;
+  color: #ffffff;
+  font-size: 14;
+}
+
+.section Label {
+  font-weight: bold;
+}
+
+.section-disabled {
+  color: #9a9a9a;
+}
+
+.section-disabled TextField {
+  color: #9a9a9a;
+}

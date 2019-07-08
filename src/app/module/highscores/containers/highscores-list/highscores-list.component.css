@@ -1,0 +1,74 @@
+.list {
+  background-color: #333364;
+}
+
+.list-item {
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20;
+  font-size: 14;
+  font-weight: bold;
+}
+
+.top-3 {
+  font-size: 26;
+}
+
+.top-10 {
+  font-size: 22;
+}
+
+.top-20 {
+  font-size: 20;
+}
+
+.top-30 {
+  font-size: 18;
+}
+
+.top-40 {
+  font-size: 16;
+}
+
+.color-0 {
+  color: #2ed462;
+}
+
+.color-1 {
+  color: #4872f1;
+}
+
+.color-2 {
+  color: #f78b49;
+}
+
+.color-3 {
+  color: #ef4cd8;
+}
+
+.color-4 {
+  color: #7c52f6;
+}
+
+.color-5 {
+  color: #2c9beb;
+}
+
+.color-6 {
+  color: #e4403d;
+}
+
+.color-7 {
+  color: #e5ea42;
+}
+
+.color-8 {
+  color: #42eae5;
+}
+
+.color-9 {
+  color: #16a210;
+}
+
+
+
