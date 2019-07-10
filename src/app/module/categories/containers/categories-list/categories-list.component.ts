@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryType } from '~/app/module/core/entity/category/category-type';
 
 @Component({
   selector: 'tg-categories-list',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   moduleId: module.id,
 })
 export class CategoriesListComponent implements OnInit {
+  private categoryType = CategoryType;
 
   constructor() { }
 

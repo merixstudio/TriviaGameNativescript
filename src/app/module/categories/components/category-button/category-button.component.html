@@ -1,0 +1,21 @@
+<StackLayout [row]="row" [col]="col">
+  <StackLayout
+    class="button-container"
+    (tap)="handleTap($event)"
+  >
+    <StackLayout
+      class="icon-circle"
+      [backgroundColor]="color"
+    >
+      <Label
+        [text]="icon"
+        class="far icon"
+      ></Label>
+    </StackLayout>
+    <Label
+      class="title"
+      [text]="text"
+      [color]="color"
+    ></Label>
+  </StackLayout>
+</StackLayout>

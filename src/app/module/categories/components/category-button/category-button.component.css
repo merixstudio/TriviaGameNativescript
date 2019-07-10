@@ -1,0 +1,26 @@
+.button-container {
+  height: 80%;
+  background-color: rgba(57, 61, 98, 0.7);
+  margin: 10%;
+  border-radius: 10%;
+  text-align: center;
+  vertical-align: center;
+}
+
+.icon-circle {
+  width: 40;
+  height: 40;
+  background-color: red;
+  border-radius: 40;
+  text-align: center;
+  vertical-align: center;
+}
+
+.icon {
+  color: #ffffff;
+}
+
+.title {
+  margin-top: 10;
+  font-weight: bold;
+}

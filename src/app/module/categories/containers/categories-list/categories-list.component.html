@@ -1,5 +1,91 @@
 <StackLayout class="main">
   <ActionBar title="Triva Game" class="action-bar"></ActionBar>
 
-  <Label text="Categories list"></Label>
+  <Label class="title" text="Select Category"></Label>
+
+  <GridLayout
+    columns="*, *"
+    rows="*, *, *, *, *"
+  >
+    <tg-category-button
+      icon="&#xf02d;"
+      color="#2ed462"
+      row="0"
+      col="0"
+      text="Books"
+      [categoryId]="categoryType.BOOKS"
+    ></tg-category-button>
+    <tg-category-button
+      icon="&#xf008;"
+      color="#4872f1"
+      row="0"
+      col="1"
+      text="Film"
+      [categoryId]="categoryType.FILM"
+    ></tg-category-button>
+    <tg-category-button
+      icon="&#xf001;"
+      color="#f78b49"
+      row="1"
+      col="0"
+      text="Music"
+      [categoryId]="categoryType.MUSIC"
+    ></tg-category-button>
+    <tg-category-button
+      icon="&#xf11b;"
+      color="#ef4cd8"
+      row="1"
+      col="1"
+      text="Video games"
+      [categoryId]="categoryType.VIDEO_GAMES"
+    ></tg-category-button>
+    <tg-category-button
+      icon="&#xf1e3;"
+      color="#7c52f6"
+      row="2"
+      col="0"
+      text="Sports"
+      [categoryId]="categoryType.SPORTS"
+    ></tg-category-button>
+    <tg-category-button
+      icon="&#xf277;"
+      color="#2c9beb"
+      row="2"
+      col="1"
+      text="Geography"
+      [categoryId]="categoryType.GEOGRAPHY"
+    ></tg-category-button>
+    <tg-category-button
+      icon="&#xf1da;"
+      color="#e4403d"
+      row="3"
+      col="0"
+      text="History"
+      [categoryId]="categoryType.HISTORY"
+    ></tg-category-button>
+    <tg-category-button
+      icon="&#xf24e;"
+      color="#e5ea42"
+      row="3"
+      col="1"
+      text="Politics"
+      [categoryId]="categoryType.POLITICS"
+    ></tg-category-button>
+    <tg-category-button
+      icon="&#xf1fc;"
+      color="#42eae5"
+      row="4"
+      col="0"
+      text="Art"
+      [categoryId]="categoryType.ART"
+    ></tg-category-button>
+    <tg-category-button
+      icon="&#xf1b0;"
+      color="#16a210"
+      row="4"
+      col="1"
+      text="Animals"
+      [categoryId]="categoryType.ANIMALS"
+    ></tg-category-button>
+  </GridLayout>
 </StackLayout>
