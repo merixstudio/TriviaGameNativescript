@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { GestureEventData } from 'tns-core-modules/ui/gestures';
+import { RouterExtensions } from 'nativescript-angular';
+import { NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'tg-category-button',
@@ -15,12 +17,30 @@ export class CategoryButtonComponent implements OnInit {
   @Input() col: string;
   @Input() categoryId: string;
 
-  constructor() { }
+  constructor(
+    private routerExtensions: RouterExtensions,
+  ) { }
 
   ngOnInit() {
   }
 
   handleTap(args: GestureEventData) {
-    console.log('Navigate to game, category id: ', this.categoryId);
+    const view = args.view;
+    view.animate({
+      scale: { x: 1.3, y: 1.3 },
+      duration: 100,
+    })
+      .then(() => view.animate({
+        scale: { x: 1, y: 1 },
+        duration: 100,
+      }))
+      .then(() => {
+        const navigationExtras: NavigationExtras = {
+          queryParams: {
+            categoryId: this.categoryId,
+          }
+        };
+        this.routerExtensions.navigate( ['game'], navigationExtras);
+      })
   }
 }
