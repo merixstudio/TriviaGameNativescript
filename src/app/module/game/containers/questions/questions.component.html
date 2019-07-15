@@ -1,0 +1,80 @@
+<ng-container *ngIf="isLoading; else game">
+  <GridLayout
+    class="main"
+    columns="*"
+    rows="*"
+  >
+    <ActionBar title="Questions - Loading" class="action-bar"></ActionBar>
+
+    <ActivityIndicator
+      row="2"
+      colspan="2"
+      busy="true"
+      width="40"
+      height="40"
+      class="activity-indicator"
+    ></ActivityIndicator>
+  </GridLayout>
+</ng-container>
+
+<ng-template #game>
+  <StackLayout class="main">
+    <ActionBar title="Questions" class="action-bar"></ActionBar>
+
+    <ng-container *ngIf="questions.length; else noQuestions">
+      <GridLayout
+        class="main"
+        columns="*, *"
+        rows="*, auto, *, auto, *, auto, *, auto"
+      >
+        <Label
+          row="1"
+          [text]="'Question ' + (currentQuestionIndex + 1) + ' of ' + questionsAmount"
+          class="question-number"
+          colspan="2"
+        ></Label>
+        <Label
+          row="3"
+          class="question-text"
+          textWrap="true"
+          colspan="2"
+          [text]="getQuestion()"
+        ></Label>
+
+        <Button
+          text="False"
+          row="7"
+          col="0"
+          class="answer-button"
+          (tap)="setAnswer($event, false)"
+        ></Button>
+        <Button
+          text="True"
+          row="7"
+          col="1"
+          class="answer-button"
+          (tap)="setAnswer($event, true)"
+        ></Button>
+      </GridLayout>
+    </ng-container>
+
+    <ng-template #noQuestions>
+      <GridLayout columns="*" rows="*, auto, *">
+        <StackLayout
+          row="1"
+          class="no-questions"
+        >
+          <Label
+            class="no-questions-title"
+            text="Error"
+          ></Label>
+          <Label
+            class="no-questions-description"
+            text="No questions in this category in our database"
+            textWrap="true"
+          ></Label>
+        </StackLayout>
+      </GridLayout>
+    </ng-template>
+  </StackLayout>
+</ng-template>
