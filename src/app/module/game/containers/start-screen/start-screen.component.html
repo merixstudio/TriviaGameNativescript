@@ -1,1 +1,32 @@
-<Button text="start-screen works!" class="btn btn-primary"></Button>
+<GridLayout
+  class="main"
+  columns="*"
+  rows="*, auto, auto, auto, *, auto"
+>
+  <ActionBar title="Start Game" class="action-bar"></ActionBar>
+
+  <Button
+    row="1"
+    text="Easy"
+    [ngClass]="{ 'selected': difficulty === difficultyType.EASY }"
+    (tap)="changeDifficulty(difficultyType.EASY)"
+  ></Button>
+  <Button
+    row="2"
+    text="Medium"
+    [ngClass]="{ 'selected': difficulty === difficultyType.MEDIUM }"
+    (tap)="changeDifficulty(difficultyType.MEDIUM)"
+  ></Button>
+  <Button
+    row="3"
+    text="Hard"
+    [ngClass]="{ 'selected': difficulty === difficultyType.HARD }"
+    (tap)="changeDifficulty(difficultyType.HARD)"
+  ></Button>
+
+  <Button
+    row="5"
+    text="Start"
+    (tap)="startGame()"
+  ></Button>
+</GridLayout>

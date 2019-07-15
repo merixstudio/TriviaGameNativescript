@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryType } from '~/app/module/core/entity/category/category-type';
+import { CategoryType } from '~/app/module/core/entity/category/category-type.enum';
 
 @Component({
   selector: 'tg-categories-list',
