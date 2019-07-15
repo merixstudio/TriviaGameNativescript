@@ -1,1 +1,16 @@
-/* Add mobile styles for the component here.  */
+Button {
+  width: 80%;
+  height: 50;
+  color: #f63f4d;
+  border-color: #f63f4d;
+  border-width: 3;
+  border-radius: 30;
+  margin: 10;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.selected {
+  color: #ffffff;
+  background: #f63f4d;
+}
