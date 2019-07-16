@@ -3,6 +3,7 @@ import { NativeScriptCommonModule } from 'nativescript-angular/common';
 import { StartScreenComponent } from '~/app/module/game/containers/start-screen/start-screen.component';
 import { GameRoutingModule } from '~/app/module/game/game-routing.module';
 import { QuestionsComponent } from '~/app/module/game/containers/questions/questions.component';
+import { ResultComponent } from '~/app/module/game/containers/result/result.component';
 
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
@@ -13,6 +14,7 @@ import { QuestionsComponent } from '~/app/module/game/containers/questions/quest
   declarations: [
     StartScreenComponent,
     QuestionsComponent,
+    ResultComponent,
   ],
 })
 export class GameModule { }

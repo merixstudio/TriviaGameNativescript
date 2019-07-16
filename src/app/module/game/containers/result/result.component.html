@@ -1,0 +1,57 @@
+<StackLayout class="main">
+  <ActionBar title="Result" class="action-bar">
+    <NavigationButton visibility="collapsed"></NavigationButton>
+    <ActionItem text="Categories" ios.position="left" (tap)="navigateToCategories()"></ActionItem>
+  </ActionBar>
+
+  <ScrollView>
+    <StackLayout>
+      <StackLayout class="points">
+        <Label
+          class="points-label"
+          text="Your points: "
+        ></Label>
+        <Label
+          class="points-value"
+          [text]="points.points + ' of ' + points.maxPoints"
+        ></Label>
+      </StackLayout>
+      <StackLayout
+        class="question"
+        *ngFor="let answer of answers; let i = index; let isLast = last;"
+      >
+        <Label
+          class="question-number"
+          [text]="'Question ' + (i + 1)"
+        ></Label>
+        <Label
+          class="question-text"
+          textWrap="true"
+          [text]="answer.question"
+        ></Label>
+
+        <FlexboxLayout class="answer">
+          <Label
+            class="answer-label"
+            text="Your answer:"
+          ></Label>
+          <Label
+            class="answer-value"
+            [text]="' ' + answer.answer"
+            [ngClass]="{
+              'answer-value--incorrect': answer.answer !== answer.correctAnswer
+            }"
+          ></Label>
+        </FlexboxLayout>
+        <Label
+          class="answer-label"
+          [text]="'Correct answer: ' + answer.correctAnswer"
+        ></Label>
+        <StackLayout
+          class="separator"
+          *ngIf="!isLast"
+        ></StackLayout>
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
+</StackLayout>
