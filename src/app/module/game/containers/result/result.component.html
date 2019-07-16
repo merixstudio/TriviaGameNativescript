@@ -27,7 +27,7 @@
         <Label
           class="question-text"
           textWrap="true"
-          [text]="answer.question"
+          [text]="answer.question | entityDecode"
         ></Label>
 
         <FlexboxLayout class="answer">

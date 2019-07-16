@@ -4,12 +4,14 @@ import { StartScreenComponent } from '~/app/module/game/containers/start-screen/
 import { GameRoutingModule } from '~/app/module/game/game-routing.module';
 import { QuestionsComponent } from '~/app/module/game/containers/questions/questions.component';
 import { ResultComponent } from '~/app/module/game/containers/result/result.component';
+import { EntityDecodeModule } from '~/app/module/shared/entity-decode/entity-decode.module';
 
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
   imports: [
     NativeScriptCommonModule,
     GameRoutingModule,
+    EntityDecodeModule,
   ],
   declarations: [
     StartScreenComponent,

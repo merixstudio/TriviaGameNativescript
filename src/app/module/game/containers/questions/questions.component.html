@@ -38,7 +38,7 @@
           class="question-text"
           textWrap="true"
           colspan="2"
-          [text]="getQuestion()"
+          [text]="getQuestion() | entityDecode"
         ></Label>
 
         <Button
