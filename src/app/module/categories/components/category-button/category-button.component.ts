@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { GestureEventData } from 'tns-core-modules/ui/gestures';
 import { RouterExtensions } from 'nativescript-angular';
-import { NavigationExtras } from '@angular/router';
+import { ExtendedNavigationExtras } from 'nativescript-angular/router/router-extensions';
 
 @Component({
   selector: 'tg-category-button',
@@ -35,7 +35,7 @@ export class CategoryButtonComponent implements OnInit {
         duration: 100,
       }))
       .then(() => {
-        const navigationExtras: NavigationExtras = {
+        const navigationExtras: ExtendedNavigationExtras = {
           queryParams: {
             categoryId: this.categoryId,
           }

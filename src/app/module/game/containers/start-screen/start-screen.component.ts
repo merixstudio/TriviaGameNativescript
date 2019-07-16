@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationExtras } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { DifficultyType } from '~/app/module/core/entity/difficulty/difficulty-type.enum';
 import { RouterExtensions } from 'nativescript-angular';
+import { ExtendedNavigationExtras } from 'nativescript-angular/router/router-extensions';
 
 @Component({
   selector: 'tg-start-screen',
@@ -32,7 +33,7 @@ export class StartScreenComponent implements OnInit {
   }
 
   startGame() {
-    const navigationExtras: NavigationExtras = {
+    const navigationExtras: ExtendedNavigationExtras = {
       queryParams: {
         categoryId: this.categoryId,
         difficulty: this.difficulty,

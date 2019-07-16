@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { EventData } from 'tns-core-modules/data/observable';
 import { RouterExtensions } from 'nativescript-angular';
 import { GameService } from '~/app/module/core/service/game/game.service';
+import { Question } from '~/app/module/core/entity/question/question';
 
 @Component({
   selector: 'tg-questions',
@@ -13,8 +14,8 @@ import { GameService } from '~/app/module/core/service/game/game.service';
 export class QuestionsComponent implements OnInit {
   private categoryId: string;
   private difficulty: string;
-  private questions: any[];
-  private currentQuestion: any;
+  private questions: Question[];
+  private currentQuestion: Question;
   private currentQuestionIndex: number;
   private questionsAmount: number;
   private isLoading: boolean;

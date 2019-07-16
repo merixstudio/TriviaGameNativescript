@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Answer } from '~/app/module/core/entity/answer/answer';
+import { QuestionsResponse } from '~/app/module/core/entity/question/question-response';
+import { Points } from '~/app/module/core/entity/points/points';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
   private baseUrl: string = 'https://opentdb.com/api.php?type=boolean';
-  private answers: any[] = [];
+  private answers: Answer[] = [];
 
   constructor(
     private http: HttpClient,
@@ -21,11 +24,11 @@ export class GameService {
     return headers;
   }
 
-  getQuestions(categoryId: string, difficulty: string, questionsAmount: number): Observable<any> {
+  getQuestions(categoryId: string, difficulty: string, questionsAmount: number): Observable<QuestionsResponse> {
     const serverUrl = `${this.baseUrl}&category=${categoryId}&difficulty=${difficulty}&amount=${questionsAmount}`;
     const headers = this.createRequestHeader();
 
-    return this.http.get<any>(serverUrl, { headers: headers });
+    return this.http.get<QuestionsResponse>(serverUrl, { headers: headers });
   }
 
   setAnswer(question: string, answer: boolean | string, correctAnswer: boolean): void {
@@ -36,11 +39,11 @@ export class GameService {
     });
   }
 
-  getAnswers() {
+  getAnswers(): Answer[] {
     return this.answers;
   }
 
-  getPoints() {
+  getPoints(): Points {
     const maxPoints = this.answers.length;
 
     const points = this.answers.reduce((sum, el) => {
@@ -55,7 +58,7 @@ export class GameService {
     }
   }
 
-  reset() {
+  reset(): void {
     this.answers = [];
   }
 }
