@@ -1,1 +1,63 @@
-/* Add mobile styles for the component here.  */
+.points {
+  text-align: center;
+  margin-top: 20;
+  margin-bottom: 40;
+}
+
+.points-label {
+  color: #f63f4d;
+  font-size: 30;
+  font-weight: bold;
+}
+
+.points-value {
+  font-size: 40;
+  color: #f78b49;
+  font-weight: bold;
+}
+
+.question {
+  margin: 30 0;
+  text-align: center;
+  padding: 0 20;
+}
+
+.question-number {
+  font-size: 26;
+  font-weight: bold;
+  color: #f63f4d;
+  text-align: center;
+  margin-bottom: 15;
+}
+
+.question-text {
+  color: #ffffff;
+  margin-bottom: 15;
+}
+
+.answer {
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.answer-label {
+  font-weight: bold;
+  color: #f78b49;
+}
+
+.answer-value {
+  font-weight: bold;
+  color: #2ed462;
+}
+
+.answer-value--incorrect {
+  color: #e4403d;
+}
+
+.separator {
+  margin-top: 30;
+  height: 1;
+  width: 70%;
+  background-color: #f63f4d;
+}
