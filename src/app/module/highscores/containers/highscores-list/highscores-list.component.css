@@ -3,72 +3,69 @@
 }
 
 .list-item {
-  flex-direction: row;
-  justify-content: space-between;
   padding: 20;
   font-size: 14;
+  color: #ffffff;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 40;
+  height: 40;
+  border-radius: 20;
+  color: #ffffff;
   font-weight: bold;
-}
-
-.top-3 {
-  font-size: 26;
-}
-
-.top-10 {
-  font-size: 22;
-}
-
-.top-20 {
   font-size: 20;
+  text-align: center;
+  align-self: center;
+  margin-right: 20;
 }
 
-.top-30 {
-  font-size: 18;
-}
-
-.top-40 {
+.name {
   font-size: 16;
 }
 
+.points {
+  font-weight: bold;
+}
+
 .color-0 {
-  color: #2ed462;
+  background-color: #2ed462;
 }
 
 .color-1 {
-  color: #4872f1;
+  background-color: #4872f1;
 }
 
 .color-2 {
-  color: #f78b49;
+  background-color: #f78b49;
 }
 
 .color-3 {
-  color: #ef4cd8;
+  background-color: #ef4cd8;
 }
 
 .color-4 {
-  color: #7c52f6;
+  background-color: #7c52f6;
 }
 
 .color-5 {
-  color: #2c9beb;
+  background-color: #2c9beb;
 }
 
 .color-6 {
-  color: #e4403d;
+  background-color: #e4403d;
 }
 
 .color-7 {
-  color: #e5ea42;
+  background-color: #e5ea42;
 }
 
 .color-8 {
-  color: #42eae5;
+  background-color: #42eae5;
 }
 
 .color-9 {
-  color: #16a210;
+  background-color: #16a210;
 }
-
-
-
