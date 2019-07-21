@@ -1,5 +1,29 @@
 <StackLayout class="main">
   <ActionBar title="Highscores" class="action-bar"></ActionBar>
 
-  <Label text="Highscores"></Label>
+  <ListView
+    class="list"
+    separatorColor="#333364"
+    [items]="highscores"
+    (itemLoading)="onItemLoading($event)"
+  >
+    <ng-template let-score="item" let-i="index + 1">
+      <FlexboxLayout class="list-item">
+        <StackLayout orientation="horizontal">
+          <Label
+            [class]="'avatar color-' + (i + 0) % 10"
+            [text]="score.name[0]"
+          ></Label>
+          <Label
+            [text]="i + '. ' + score.name"
+            class="name"
+          ></Label>
+        </StackLayout>
+        <Label
+          [text]="score.points"
+          class="points"
+        ></Label>
+      </FlexboxLayout>
+    </ng-template>
+  </ListView>
 </StackLayout>

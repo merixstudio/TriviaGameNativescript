@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HighscoresService } from '~/app/module/core/service/highscores/highscores.service';
+import { isIOS } from 'tns-core-modules/platform';
+import { Score } from '~/app/module/core/entity/score/score';
+
+declare var UITableViewCellSelectionStyle;
 
 @Component({
   selector: 'tg-highscores-list',
@@ -7,9 +12,20 @@ import { Component, OnInit } from '@angular/core';
   moduleId: module.id,
 })
 export class HighscoresListComponent implements OnInit {
+  private highscores: Score[];
 
-  constructor() { }
+  constructor(
+    private highscoresService: HighscoresService,
+  ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.highscores = this.highscoresService.getList();
+  }
 
+  onItemLoading(args) {
+    if (isIOS) {
+      const iosCell = args.ios;
+      iosCell.selectionStyle = UITableViewCellSelectionStyle.None;
+    }
+  }
 }
