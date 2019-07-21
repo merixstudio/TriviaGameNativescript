@@ -1,5 +1,89 @@
 <StackLayout class="main">
   <ActionBar title="Settings" class="action-bar"></ActionBar>
 
-  <Label text="Settings"></Label>
+  <ScrollView>
+    <StackLayout>
+      <StackLayout class="options-category">
+        <Label
+          class="title"
+          text="Gameplay options"
+        ></Label>
+
+        <FlexboxLayout class="section">
+          <Label text="Time countdown"></Label>
+          <Switch
+            [checked]="settingsService.timeCountdown"
+            (checkedChange)="onCheckedChange($event, 'timeCountdown')"
+          ></Switch>
+        </FlexboxLayout>
+
+        <FlexboxLayout
+          class="section"
+          [ngClass]="{ 'section-disabled': !settingsService.timeCountdown }"
+        >
+          <Label text="Time limit when counting down"></Label>
+          <FlexboxLayout class="textfield-container">
+            <TextField
+              hint="Time"
+              keyboardType="number"
+              returnKeyType="done"
+              autocorrect="false"
+              maxLength="6"
+              [text]="settingsService.timeCountdownLimit"
+              [editable]="settingsService.timeCountdown"
+              (textChange)="onTextChange($event, 'timeCountdownLimit')"
+            ></TextField>
+            <Label text="ms"></Label>
+          </FlexboxLayout>
+        </FlexboxLayout>
+
+        <FlexboxLayout class="section">
+          <Label text="Delay after reply"></Label>
+          <Switch
+            [checked]="settingsService.delay"
+            (checkedChange)="onCheckedChange($event, 'delay')"
+          ></Switch>
+        </FlexboxLayout>
+
+        <FlexboxLayout
+          class="section"
+          [ngClass]="{ 'section-disabled': !settingsService.delay }"
+        >
+          <Label text="Time of delay after reply"></Label>
+          <FlexboxLayout class="textfield-container">
+            <TextField
+              hint="Time"
+              keyboardType="number"
+              returnKeyType="done"
+              autocorrect="false"
+              maxLength="6"
+              [text]="settingsService.delayTime"
+              [editable]="settingsService.delay"
+              (textChange)="onTextChange($event, 'delayTime')"
+            ></TextField>
+            <Label text="ms"></Label>
+          </FlexboxLayout>
+        </FlexboxLayout>
+      </StackLayout>
+
+      <StackLayout class="options-category">
+        <Label
+          class="title"
+          text="Game options"
+        ></Label>
+        <FlexboxLayout class="section">
+          <Label text="Amount of questions"></Label>
+          <TextField
+            hint="Amount"
+            keyboardType="number"
+            returnKeyType="done"
+            autocorrect="false"
+            maxLength="2"
+            [text]="settingsService.questionsAmount"
+            (textChange)="onTextChange($event, 'questionsAmount')"
+          ></TextField>
+        </FlexboxLayout>
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
 </StackLayout>
