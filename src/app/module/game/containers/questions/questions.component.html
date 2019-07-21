@@ -22,6 +22,10 @@
     <ActionBar title="Questions" class="action-bar"></ActionBar>
 
     <ng-container *ngIf="questions.length; else noQuestions">
+      <GridLayout [columns]="columns" class="progressbar">
+        <StackLayout col="0" class="progressbar-value"></StackLayout>
+      </GridLayout>
+
       <GridLayout
         class="main"
         columns="*, *"
@@ -46,14 +50,14 @@
           row="7"
           col="0"
           class="answer-button"
-          (tap)="setAnswer($event, false)"
+          (tap)="setAnswer($event, false, delayTime)"
         ></Button>
         <Button
           text="True"
           row="7"
           col="1"
           class="answer-button"
-          (tap)="setAnswer($event, true)"
+          (tap)="setAnswer($event, true, delayTime)"
         ></Button>
       </GridLayout>
     </ng-container>
